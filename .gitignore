@@ -368,3 +368,9 @@ FodyWeavers.xsd
 /MtlsDemo.Client/Certs/Self-Signed/key.pem
 /MtlsDemo.Client/Certs/Self-Signed/csr.pem
 /MtlsDemo.Client/Certs/Self-Signed/cert.pem
+/MtlsDemo.Client/Certs/ca.crt
+/MtlsDemo.Client/Certs/ca.key
+/MtlsDemo.Client/Certs/ca.srl
+/MtlsDemo.Client/Certs/server.crt
+/MtlsDemo.Client/Certs/server.key
+/MtlsDemo.Client/Certs/server.csr

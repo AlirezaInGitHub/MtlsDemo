@@ -19,7 +19,6 @@ namespace MtlsDemo.Server
                 {
                     options.AllowAnyClientCertificate();
                     options.ClientCertificateMode = ClientCertificateMode.AllowCertificate;
-
                 });
             });
 
@@ -49,10 +48,10 @@ namespace MtlsDemo.Server
                .AddCertificate(options =>
                {
                    options.RevocationMode = X509RevocationMode.NoCheck;
-                   options.ChainTrustValidationMode = X509ChainTrustMode.CustomRootTrust;
-                   options.AllowedCertificateTypes = CertificateTypes.All;
-                   options.ValidateCertificateUse = false;
-                   options.ValidateValidityPeriod = false;
+                   //options.ChainTrustValidationMode = X509ChainTrustMode.CustomRootTrust;
+                   //options.AllowedCertificateTypes = CertificateTypes.All;
+                   //options.ValidateCertificateUse = false;
+                   //options.ValidateValidityPeriod = false;
 
                    options.Events = new CertificateAuthenticationEvents
                    {

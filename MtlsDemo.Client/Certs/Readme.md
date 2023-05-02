@@ -6,7 +6,7 @@ openssl genpkey -algorithm RSA -out ca.key
 2. Generate a self-signed certificate for the CA using the following command:
 This command will create a self-signed CA certificate named ca.crt.
 ```
-openssl req -new -x509 -key ca.key -out ca.crt -subj "/CN=Local Test CA"
+openssl req -new -x509 -key ca.key -out ca.crt -subj "/C=AU/ST=Vic/L=Melbourne/O=Mtls Demo Server/CN=mtlsdemo.server"
 ```
 
 3. Create a new serial file for the CA using the following command:
@@ -31,5 +31,5 @@ openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -out server.crt -days 
 
 7. Combine the server certificate, private key, and CA certificate into a PFX file using the following command:
 ```
-openssl pkcs12 -export -out server.pfx -inkey server.key -in server.crt -certfile ca.crt
+openssl pkcs12 -export -out server.pfx -inkey server.key -in server.crt -certfile ca.crt --passout pass:Password01
 ```

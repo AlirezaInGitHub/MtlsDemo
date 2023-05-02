@@ -11,5 +11,5 @@ openssl x509 -req -days 365 -in csr.pem -signkey key.pem -out cert.pem
 
 3. Convert the private key and the certificate to a PKCS12 file:
 ```
-openssl pkcs12 -export -out cert.pfx -inkey key.pem -in cert.pem --passout pass:Password01
+openssl pkcs12 -export -out cert.pfx -inkey key.pem -in cert.pem -passout pass:Password01
 ```
