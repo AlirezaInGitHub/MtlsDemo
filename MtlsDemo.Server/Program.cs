@@ -35,8 +35,6 @@ namespace MtlsDemo.Server
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
-
             app.UseAuthentication();
 
             app.MapControllers();
@@ -55,7 +53,6 @@ namespace MtlsDemo.Server
                    options.AllowedCertificateTypes = CertificateTypes.All;
                    options.ValidateCertificateUse = false;
                    options.ValidateValidityPeriod = false;
-
 
                    options.Events = new CertificateAuthenticationEvents
                    {

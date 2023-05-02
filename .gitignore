@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/MtlsDemo.Client/Certs/Self-Signed/Readme.md
+/MtlsDemo.Client/Certs/Self-Signed/key.pem
+/MtlsDemo.Client/Certs/Self-Signed/csr.pem
+/MtlsDemo.Client/Certs/Self-Signed/cert.pem
+/MtlsDemo.Client/Certs/Self-Signed/key.pem
+/MtlsDemo.Client/Certs/Self-Signed/csr.pem
+/MtlsDemo.Client/Certs/Self-Signed/cert.pem
