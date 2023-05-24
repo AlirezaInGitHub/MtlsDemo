@@ -13,11 +13,16 @@ namespace MtlsDemo.Server
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Logging.ClearProviders();
+            builder.Logging.AddConsole();
+
             builder.Services.Configure<KestrelServerOptions>(options =>
             {
                 options.ConfigureHttpsDefaults(options =>
                 {
                     options.AllowAnyClientCertificate();
+                    options.CheckCertificateRevocation = false;
+                    options.ClientCertificateValidation = ClientCertificateValidation;
                     options.ClientCertificateMode = ClientCertificateMode.AllowCertificate;
                 });
             });
@@ -41,6 +46,11 @@ namespace MtlsDemo.Server
             app.Run();
         }
 
+        private static bool ClientCertificateValidation(X509Certificate2 arg1, X509Chain? arg2, SslPolicyErrors arg3)
+        {
+            return true;
+        }
+
         private static void ConfigureServices(IServiceCollection services)
         {
             services
@@ -48,10 +58,7 @@ namespace MtlsDemo.Server
                .AddCertificate(options =>
                {
                    options.RevocationMode = X509RevocationMode.NoCheck;
-                   //options.ChainTrustValidationMode = X509ChainTrustMode.CustomRootTrust;
-                   //options.AllowedCertificateTypes = CertificateTypes.All;
-                   //options.ValidateCertificateUse = false;
-                   //options.ValidateValidityPeriod = false;
+                   options.AllowedCertificateTypes = CertificateTypes.All;
 
                    options.Events = new CertificateAuthenticationEvents
                    {

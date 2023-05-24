@@ -374,3 +374,5 @@ FodyWeavers.xsd
 /MtlsDemo.Client/Certs/server.crt
 /MtlsDemo.Client/Certs/server.key
 /MtlsDemo.Client/Certs/server.csr
+
+**/**/.DS_Store

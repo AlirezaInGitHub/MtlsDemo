@@ -22,7 +22,8 @@ namespace MtlsDemo.Server.Controllers
             {
                 // Use certificate information as needed
                 var subjectName = certificate.SubjectName.Name;
-                return Ok($"Greeting from server -  Certificate presented by client: {subjectName}");
+                return Ok($"Greeting from server -  Certificate presented by client: {subjectName} " +
+                    $"- The presented certificate {(certificate.HasPrivateKey ? "has" : "doesn't have")} private key");
             }
             else
             {

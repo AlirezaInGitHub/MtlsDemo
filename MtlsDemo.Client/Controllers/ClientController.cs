@@ -20,11 +20,16 @@ public class ClientController : ControllerBase
     {
         var certFile = "./Certs/Self-Signed/cert.pfx";
         //certFile = "./Certs/server.pfx";
+
+        /* 💡💡💡
+        /*  Note: In the certificate, there's Private Key. But .net is smart enough to not send it to the server
+         */
         var certificate = new X509Certificate2(certFile, "Password01");
+        Console.WriteLine($"Client certificate {(certificate.HasPrivateKey ? "has" : "doesn't have")} private key");
         var handler = new HttpClientHandler
         {
             ClientCertificateOptions = ClientCertificateOption.Manual,
-            ServerCertificateCustomValidationCallback = 
+            ServerCertificateCustomValidationCallback =
                 HttpClientHandler.DangerousAcceptAnyServerCertificateValidator,
         };
         handler.ClientCertificates.Add(certificate);
