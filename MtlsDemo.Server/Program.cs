@@ -21,7 +21,6 @@ namespace MtlsDemo.Server
                 options.ConfigureHttpsDefaults(options =>
                 {
                     options.AllowAnyClientCertificate();
-                    // ptions.CheckCertificateRevocation = false;
                     options.ClientCertificateMode = ClientCertificateMode.AllowCertificate;
                 });
             });
