@@ -21,8 +21,7 @@ namespace MtlsDemo.Server
                 options.ConfigureHttpsDefaults(options =>
                 {
                     options.AllowAnyClientCertificate();
-                    options.CheckCertificateRevocation = false;
-                    options.ClientCertificateValidation = ClientCertificateValidation;
+                    // ptions.CheckCertificateRevocation = false;
                     options.ClientCertificateMode = ClientCertificateMode.AllowCertificate;
                 });
             });
@@ -44,11 +43,6 @@ namespace MtlsDemo.Server
             app.MapControllers();
 
             app.Run();
-        }
-
-        private static bool ClientCertificateValidation(X509Certificate2 arg1, X509Chain? arg2, SslPolicyErrors arg3)
-        {
-            return true;
         }
 
         private static void ConfigureServices(IServiceCollection services)
