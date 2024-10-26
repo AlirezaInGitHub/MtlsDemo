@@ -9,7 +9,9 @@ To run this project locally, follow these steps:
 
 1. `git clone https://github.com/AlirezaInGitHub/MtlsDemo.git)https://github.com/AlirezaInGitHub/MtlsDemo.git`
 2. `cd .\MtlsDemo.Client`
-3. `dotnet run .\MtlsDemo.Client.csproj`
-4. `cd ..`
-5. `cd .\MtlsDemo.Server`
-6. `dotnet run .\MtlsDemo.Server.csproj`
+3. Follow the instructions in ./Certs/Readme.md
+4. Follow the instructions in ./Certs/Self-Signed/Readme.md
+5. `dotnet run .\MtlsDemo.Client.csproj`
+6. `cd ..`
+7. `cd .\MtlsDemo.Server`
+8. `dotnet run .\MtlsDemo.Server.csproj`
