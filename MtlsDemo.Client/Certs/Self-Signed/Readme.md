@@ -1,4 +1,4 @@
-﻿Apparently, only self-signed client certs will work.
+If you don't want to update your trust store, you can generate a self-signed certificate.
 1. Generate a private key and a certificate signing request (CSR):
 ```
 openssl req -newkey rsa:2048 -nodes -keyout key.pem -out csr.pem -subj "/C=AU/ST=Vic/L=Melbourne/O=Mtls Demo Client/CN=mtlsdemo.client"
